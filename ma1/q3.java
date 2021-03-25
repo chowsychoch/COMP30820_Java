@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class q3 {
     public static void main(String[] args) {
         int bingo = (int) (Math.random() * 100);
-        System.out.println(bingo);
+
         while (true){
             Scanner input = new Scanner(System.in);
             //prompt for user integer

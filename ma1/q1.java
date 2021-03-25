@@ -26,6 +26,6 @@ public class q1 {
         if(status) {
             length = length * (1.15);
         }
-        System.out.println(length);
+        System.out.printf("%.2f",length);
     }
 }

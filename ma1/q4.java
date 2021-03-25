@@ -27,6 +27,9 @@ public class q4 {
             count++;
         }
         //print out
+        if (result == ""){
+            System.out.println("No common prefix");
+        }
         System.out.println(result);
     }
 

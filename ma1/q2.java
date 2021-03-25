@@ -15,6 +15,7 @@ public class q2 {
         //Close the Scanner input
         //if invalid month is entered, can exit
         if ( month >12 || month <=0 ){
+            System.out.println("Invalid month entered");
             System.exit(-1);
         }
         int answer = -1;
