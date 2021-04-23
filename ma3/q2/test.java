@@ -13,13 +13,16 @@ public class test {
         double[] perimeter = new double[]{Polygon1.getPerimeter(), Polygon2.getPerimeter(), Polygon3.getPerimeter(), Polygon4.getPerimeter()};
         Arrays.sort(perimeter);
         double[] area = new double[]{Polygon1.getArea(), Polygon2.getArea(), Polygon3.getArea(), Polygon4.getArea()};
-        Arrays.sort(area);
+        double[] newarea = Arrays.copyOf(area,area.length);
+        Arrays.sort(newarea);
+        System.out.println(Arrays.toString(newarea));
+        /*Arrays.sort(area);
         System.out.println("The smallest perimeter: "+perimeter[0]);
         System.out.println("The largest area: "+area[3]);
         System.out.println(Polygon1.toString());
         System.out.println(Polygon2.toString());
         System.out.println(Polygon3.toString());
-        System.out.println(Polygon4.toString());
+        System.out.println(Polygon4.toString());*/
     }
 
 }
