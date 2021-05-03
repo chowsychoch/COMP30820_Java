@@ -23,9 +23,9 @@ public class Player {
 	//method to add points
 	public void addPoint(int point) {
 		if (point !=0){
-			System.out.println("You won the toss + 50 points");
+			System.out.println("You won the toss, added " +point + " points");
 		}else{
-			System.out.println("Wrong guess! 0 points");
+			System.out.println("Wrong guess! added " +point + " points");
 		}
 		points += point;
 	}

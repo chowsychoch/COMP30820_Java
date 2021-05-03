@@ -10,6 +10,7 @@ public class mainMenu {
 		Scanner input = new Scanner(System.in);
 		int option; 
 		int game;
+		int VIP_count = 0;
 		//use a list to save the points and name of each player and later can do sorting
 		ArrayList<Player> leaderboard = new ArrayList<>();
 
@@ -21,7 +22,13 @@ public class mainMenu {
 				System.out.println("Please enter a name:");
 				String name = input.next();
 				//create a new player instance
-				VIPPlayer p = new VIPPlayer();
+				//if (VIP_count <=5){
+					//VIPPlayer p = new VIPPlayer();
+
+				//}else{
+					//Player p = new Player();
+				//}
+				Player p = (VIP_count <=5) ? new VIPPlayer() : new Player();;
 				//Player p = new Player();
 				
 				//set his/her name
@@ -36,12 +43,15 @@ public class mainMenu {
 					}else if ( game == 2) {
 						//get the points the player earn from the game and add it to their instance
 						p.addPoint(guessing());
+					}else if (game == -1){
+						continue;
 					}else{
-						System.out.println("You have input an correct number, please try again!");
+						System.out.println("You have a wrong number, please try it again");
 					}
 			}while(game != -1);
 				//after each player done playing, add its name info into the leaderboard
 				leaderboard.add(p);
+				VIP_count+=5;
 			}
 		}while ( option == 1);
 			System.out.println("Player : Points");
@@ -65,6 +75,7 @@ public class mainMenu {
 		
 		//set a random number as the number to be guessed
 		int num = (int)(100 * Math.random()) + 1;
+		System.out.println("num is" + num);
 		int points = 0;
 		
 		//use a flag to check if player guess the correct number or not
@@ -73,7 +84,8 @@ public class mainMenu {
 			int guess = input.nextInt();
 			trials--;
 			if ( guess == num ) {
-				System.out.println("You guess the number with"+trials+"trials left, congratulation! +"+ (points = trials == 0? 20 : trials * 20)+" points");
+				points = trials == 0? 20 : trials * 20;
+				//System.out.println("You guess the number with"+trials+"trials left, congratulation! +"+ (points = trials == 0? 20 : trials * 20)+" points");
 				flag = true;
 				break;
 			}else if ( guess < num ) {
