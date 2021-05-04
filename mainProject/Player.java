@@ -2,7 +2,7 @@ package ma.mainProject;
 
 public class Player {
 	//fields
-	int points = 0;
+	 int points = 0;
 	String name;
 	
 	public int getPoints() {

@@ -22,14 +22,7 @@ public class mainMenu {
 				System.out.println("Please enter a name:");
 				String name = input.next();
 				//create a new player instance
-				//if (VIP_count <=5){
-					//VIPPlayer p = new VIPPlayer();
-
-				//}else{
-					//Player p = new Player();
-				//}
-				Player p = (VIP_count <=5) ? new VIPPlayer() : new Player();;
-				//Player p = new Player();
+				Player p = (VIP_count <3) ? new VIPPlayer() : (VIP_count <5) ?new LimitedPlayer() : new Player();;
 				
 				//set his/her name
 				p.setName(name);
@@ -51,7 +44,7 @@ public class mainMenu {
 			}while(game != -1);
 				//after each player done playing, add its name info into the leaderboard
 				leaderboard.add(p);
-				VIP_count+=5;
+				VIP_count+=1;
 			}
 		}while ( option == 1);
 			System.out.println("Player : Points");
@@ -75,7 +68,6 @@ public class mainMenu {
 		
 		//set a random number as the number to be guessed
 		int num = (int)(100 * Math.random()) + 1;
-		System.out.println("num is" + num);
 		int points = 0;
 		
 		//use a flag to check if player guess the correct number or not
